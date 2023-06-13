@@ -1,4 +1,4 @@
-# pricebook_project
+# listbook_project
 
 A new Flutter project.
 
