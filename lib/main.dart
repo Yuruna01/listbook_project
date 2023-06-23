@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ui/dashboard.dart';
-import 'ui/history.dart';
-import 'ui/about.dart';
+import 'ui/beranda.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'listBook',
-      home: Dashboard(),
+      title: 'Listbook',
+      home: Beranda(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../ui/dashboard.dart';
+import '../ui/beranda.dart';
 import '../ui/catalogue.dart';
 import '../ui/history.dart';
 import '../ui/about.dart';
@@ -7,26 +7,30 @@ import '../ui/login.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: [
+        children: <Widget>[
           UserAccountsDrawerHeader(
+            decoration: BoxDecoration(
+              color: Colors.cyan
+            ),
               accountName: Text("adminKuya"),
               accountEmail: Text("adminKuya@penyu.com")),
           ListTile(
             leading: Icon(Icons.home_work_rounded),
-            title: Text("Dashboard"),
+            title: Text("Beranda"),
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Dashboard()));
+                  MaterialPageRoute(builder: (context) => Beranda()));
             },
           ),
           ListTile(
             leading: Icon(Icons.screen_search_desktop_rounded),
-            title: Text("Catalogue Brand"),
+            title: Text("Katalog Merek"),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Catalogue()));
@@ -34,7 +38,7 @@ class Sidebar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.manage_history),
-            title: Text("History"),
+            title: Text("Sejarah"),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => History()));
@@ -42,7 +46,7 @@ class Sidebar extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.info),
-            title: Text("About"),
+            title: Text("Tentang"),
             onTap: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => About()));

@@ -20,9 +20,9 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Login Admin",
+              const Text("Login Admin",
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Center(
                 child: Form(
                     key: _formKey,

@@ -11,7 +11,10 @@ class _AddCatalogueState extends State<AddCatalogue> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Tambah Catalogue Brand")),
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        centerTitle: true,
+        title: Text("Tambah Catalogue Brand".toUpperCase())),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
