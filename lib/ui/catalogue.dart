@@ -10,7 +10,9 @@ class Catalogue extends StatelessWidget {
     return Scaffold(
       drawer: Sidebar(),
       appBar: AppBar(
-        title: const Text("Data Poli"),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        title: Text("Katalog".toUpperCase()),
         actions: [
           GestureDetector(
             child: const Icon(Icons.add),

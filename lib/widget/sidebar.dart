@@ -13,7 +13,7 @@ class Sidebar extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: [
+        children: <Widget>[
           UserAccountsDrawerHeader(
             accountName: Text("adminListBook",
                 style: TextStyle(
