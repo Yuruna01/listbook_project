@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'beranda.dart';
+import 'package:listbook_project/ui/dashboard.dart';
+import '../service/login_service.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
   _LoginState createState() => _LoginState();
 }
 
@@ -21,9 +23,34 @@ class _LoginState extends State<Login> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("Login Admin",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
-              const SizedBox(height: 50),
+              ClipOval(
+                child: Image.asset(
+                  'assets/images/logo.jpg',
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                "Login listBook",
+                style: TextStyle(
+                  fontFamily: 'Indie Flower',
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.cyan,
+                ),
+              ),
+              Text(
+                "admin@listBook.com",
+                style: TextStyle(
+                  fontFamily: 'Indie Flower',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.cyan,
+                ),
+              ),
+              SizedBox(height: 50),
               Center(
                 child: Form(
                     key: _formKey,
@@ -32,7 +59,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: [
                           _usernameTextField(),
-                          SizedBox(height: 20),
+                          SizedBox(height: 10),
                           _passwordTextField(),
                           SizedBox(height: 40),
                           _tombolLogin(),
@@ -49,30 +76,102 @@ class _LoginState extends State<Login> {
 
   Widget _usernameTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Username"),
+      decoration: InputDecoration(
+        labelText: "Username",
+        prefixIcon: Icon(Icons.person),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 5),
+      ),
       controller: _usernameCtrl,
+      style: TextStyle(
+        fontFamily: 'Indie Flower',
+      ),
     );
   }
 
   Widget _passwordTextField() {
     return TextFormField(
-      decoration: InputDecoration(labelText: "Password"),
+      decoration: InputDecoration(
+        labelText: "Password",
+        prefixIcon: Icon(Icons.lock),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 5),
+      ),
       obscureText: true,
       controller: _passwordCtrl,
+      style: TextStyle(
+        fontFamily: 'Indie Flower',
+      ),
     );
   }
 
   Widget _tombolLogin() {
     return Container(
-        width: MediaQuery.of(context).size.width,
-        child: ElevatedButton(
-            child: Text("Login"),
-            style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.black)),
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Beranda()));
-            }));
+      width: MediaQuery.of(context).size.width,
+      height: 40,
+      child: OutlinedButton(
+        style: ButtonStyle(
+          side: MaterialStateProperty.all(
+              BorderSide(color: Colors.cyan.shade300)),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+          ),
+        ),
+        onPressed: () async {
+          String username = _usernameCtrl.text;
+          String password = _passwordCtrl.text;
+          await LoginService().login(username, password).then((value) {
+            if (value == true) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => Dashboard()),
+              );
+            } else {
+              AlertDialog alertDialog = AlertDialog(
+                content: const Text(
+                  "Username / Password Tidak Valid",
+                  style: TextStyle(
+                    fontFamily: 'Indie Flower',
+                  ),
+                ),
+                actions: [
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text(
+                      "OK",
+                      style: TextStyle(
+                        fontFamily: 'Indie Flower',
+                      ),
+                    ),
+                    style: OutlinedButton.styleFrom(
+                      primary: Colors.cyan.shade300,
+                      side: BorderSide(color: Colors.cyan.shade300),
+                    ),
+                  )
+                ],
+              );
+              showDialog(
+                context: context,
+                builder: (context) => alertDialog,
+              );
+            }
+          });
+        },
+        child: Text(
+          'Login',
+          style: TextStyle(
+            fontFamily: 'Indie Flower',
+          ),
+        ),
+      ),
+    );
   }
 }
