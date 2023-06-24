@@ -3,12 +3,14 @@ import '../model/catalogue.dart';
 import '../service/catalogue_service.dart';
 import 'catalogue_detail.dart';
 
-class AddCatalogue extends StatefulWidget {
-  const AddCatalogue({Key? key}) : super(key: key);
-  _AddCatalogueState createState() => _AddCatalogueState();
+class UpdateCatalogue extends StatefulWidget {
+  final Catalogue catalogue;
+
+  const UpdateCatalogue({Key? key, required this.catalogue}) : super(key: key);
+  _UpdateCatalogueState createState() => _UpdateCatalogueState();
 }
 
-class _AddCatalogueState extends State<AddCatalogue> {
+class _UpdateCatalogueState extends State<UpdateCatalogue> {
   final _formKey = GlobalKey<FormState>();
   final _namaCatalogueCtrl = TextEditingController();
   final _lcdCtrl = TextEditingController();
@@ -21,6 +23,30 @@ class _AddCatalogueState extends State<AddCatalogue> {
   final _osCtrl = TextEditingController();
   final _hargaCtrl = TextEditingController();
 
+  Future<Catalogue> getData() async {
+    Catalogue data =
+        await CatalogueService().getById(widget.catalogue.id.toString());
+    setState(() {
+      _namaCatalogueCtrl.text = data.namaCatalogue;
+      _lcdCtrl.text = data.lcd;
+      _cpuCtrl.text = data.cpu;
+      _ramCtrl.text = data.ram;
+      _hddSsdCtrl.text = data.hddSsd;
+      _wifiCtrl.text = data.wifi;
+      _usbCtrl.text = data.usb;
+      _fiturCtrl.text = data.fitur;
+      _osCtrl.text = data.os;
+      _hargaCtrl.text = data.harga;
+    });
+    return data;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +55,7 @@ class _AddCatalogueState extends State<AddCatalogue> {
           SliverAppBar(
             backgroundColor: Colors.transparent,
             title: const Text(
-              "Tambah Catalogue",
+              "Ubah Catalogue",
               style: TextStyle(
                 fontFamily: 'Indie Flower',
               ),
@@ -291,7 +317,10 @@ class _AddCatalogueState extends State<AddCatalogue> {
             os: _osCtrl.text,
             harga: _hargaCtrl.text,
           );
-          await CatalogueService().simpan(catalogue).then((value) {
+
+          String id = widget.catalogue.id.toString();
+          await CatalogueService().ubah(catalogue, id).then((value) {
+            Navigator.pop(context);
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
@@ -303,6 +332,7 @@ class _AddCatalogueState extends State<AddCatalogue> {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           textStyle: TextStyle(
+            fontFamily: 'Indie Flower',
             fontSize: 18,
           ),
         ),
