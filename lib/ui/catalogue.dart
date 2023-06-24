@@ -10,7 +10,7 @@ class Catalogue extends StatelessWidget {
     return Scaffold(
       drawer: Sidebar(),
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.black,
         centerTitle: true,
         title: Text("Katalog".toUpperCase()),
         actions: [

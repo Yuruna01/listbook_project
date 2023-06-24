@@ -9,18 +9,18 @@ class About extends StatelessWidget {
     return Scaffold(
       drawer: Sidebar(),
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
-        centerTitle: true,
-        title: Text('Tentang'.toUpperCase())),
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: Text('Tentang'.toUpperCase())),
       body: ListView(
         children: <Widget>[
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: Text('Listbook Versi 1.0'.toUpperCase())
-          ),
+              child: Text('Listbook Versi 1.0'.toUpperCase())),
           Padding(
             padding: EdgeInsets.all(15),
-            child: Text('Listbook ini dibuat untuk memenuhi Projek tugas akhir semester 4 matakuliah Mobile Programing yang dikembangkan oleh kelompok 2 beranggota 5 orang yaitu :'),
+            child: Text(
+                'Listbook ini dibuat untuk memenuhi Projek tugas akhir semester 4 matakuliah Mobile Programing yang dikembangkan oleh kelompok 2 beranggota 5 orang yaitu :'),
           ),
           ListTile(
             leading: Icon(Icons.circle_sharp),

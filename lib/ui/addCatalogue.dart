@@ -12,9 +12,9 @@ class _AddCatalogueState extends State<AddCatalogue> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.cyan,
-        centerTitle: true,
-        title: Text("Tambah Catalogue Brand".toUpperCase())),
+          backgroundColor: Colors.black,
+          centerTitle: true,
+          title: Text("Tambah Catalogue Brand".toUpperCase())),
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -23,7 +23,13 @@ class _AddCatalogueState extends State<AddCatalogue> {
               TextField(
                   decoration: const InputDecoration(labelText: "Nama Brand")),
               SizedBox(height: 20),
-              ElevatedButton(onPressed: () {}, child: const Text("Simpan"))
+              ElevatedButton(
+                onPressed: () {},
+                child: const Text("Simpan"),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.black)),
+              )
             ],
           ),
         ),

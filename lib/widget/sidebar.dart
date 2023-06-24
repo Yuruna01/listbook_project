@@ -15,17 +15,15 @@ class Sidebar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.cyan
-            ),
+              decoration: BoxDecoration(color: Colors.black),
               accountName: Text("adminKuya"),
               accountEmail: Text("adminKuya@penyu.com")),
           ListTile(
             leading: Icon(Icons.home_work_rounded),
             title: Text("Beranda"),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Beranda()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Beranda()));
             },
           ),
           ListTile(

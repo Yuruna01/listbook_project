@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'beranda.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -64,6 +65,14 @@ class _LoginState extends State<Login> {
   Widget _tombolLogin() {
     return Container(
         width: MediaQuery.of(context).size.width,
-        child: ElevatedButton(child: Text("Login"), onPressed: () {}));
+        child: ElevatedButton(
+            child: Text("Login"),
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.black)),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Beranda()));
+            }));
   }
 }
