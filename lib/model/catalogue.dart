@@ -10,19 +10,22 @@ class Catalogue {
   String fitur;
   String os;
   String harga;
+  String logo;
 
-  Catalogue(
-      {this.id,
-      required this.namaCatalogue,
-      required this.lcd,
-      required this.cpu,
-      required this.ram,
-      required this.hddSsd,
-      required this.wifi,
-      required this.usb,
-      required this.fitur,
-      required this.os,
-      required this.harga});
+  Catalogue({
+    this.id,
+    required this.namaCatalogue,
+    required this.lcd,
+    required this.cpu,
+    required this.ram,
+    required this.hddSsd,
+    required this.wifi,
+    required this.usb,
+    required this.fitur,
+    required this.os,
+    required this.harga,
+    required this.logo,
+  });
 
   factory Catalogue.fromJson(Map<String, dynamic> json) => Catalogue(
       id: json["id"],
@@ -35,7 +38,8 @@ class Catalogue {
       usb: json["usb"],
       fitur: json["feature"],
       os: json["os"],
-      harga: json["price"]);
+      harga: json["price"],
+      logo: json["logo"]);
 
   Map<String, dynamic> toJson() => {
         "catalogue_name": namaCatalogue,
@@ -47,6 +51,7 @@ class Catalogue {
         "usb": usb,
         "feature": fitur,
         "os": os,
-        "price": harga
+        "price": harga,
+        "logo": logo
       };
 }

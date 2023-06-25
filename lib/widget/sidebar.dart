@@ -15,23 +15,30 @@ class Sidebar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("adminListBook",
+            accountName: Container(
+              margin: EdgeInsets.only(top: 28, bottom: 0),
+              child: Text(
+                "adminListBook",
                 style: TextStyle(
                   fontFamily: 'Indie Flower',
                   color: Colors.black,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                )),
-            accountEmail: Text("admin@listBook.com",
-                style: TextStyle(
-                  fontFamily: 'Indie Flower',
-                  color: Colors.black,
-                  fontSize: 12,
-                )),
+                ),
+              ),
+            ),
+            accountEmail: Text(
+              "admin@listBook.com",
+              style: TextStyle(
+                fontFamily: 'Indie Flower',
+                color: Colors.black,
+                fontSize: 14,
+              ),
+            ),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(
-                  'assets/images/logo.jpg',
+                  'assets/images/logo.jpeg',
                   width: 90,
                   height: 90,
                   fit: BoxFit.cover,
@@ -56,6 +63,7 @@ class Sidebar extends StatelessWidget {
                 fontFamily: 'Indie Flower',
                 color: Colors.black,
                 fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {
@@ -76,6 +84,7 @@ class Sidebar extends StatelessWidget {
                 fontFamily: 'Indie Flower',
                 color: Colors.black,
                 fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {
@@ -94,6 +103,7 @@ class Sidebar extends StatelessWidget {
                 fontFamily: 'Indie Flower',
                 color: Colors.black,
                 fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {
@@ -107,11 +117,12 @@ class Sidebar extends StatelessWidget {
               color: Colors.cyan.shade300,
             ),
             title: Text(
-              "About",
+              "About Us",
               style: TextStyle(
                 fontFamily: 'Indie Flower',
                 color: Colors.black,
                 fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {
@@ -130,6 +141,7 @@ class Sidebar extends StatelessWidget {
                 fontFamily: 'Indie Flower',
                 color: Colors.black,
                 fontSize: 16,
+                fontWeight: FontWeight.bold,
               ),
             ),
             onTap: () {

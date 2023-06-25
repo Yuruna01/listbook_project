@@ -22,6 +22,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
   final _fiturCtrl = TextEditingController();
   final _osCtrl = TextEditingController();
   final _hargaCtrl = TextEditingController();
+  final _logoCtrl = TextEditingController();
 
   Future<Catalogue> getData() async {
     Catalogue data =
@@ -37,6 +38,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
       _fiturCtrl.text = data.fitur;
       _osCtrl.text = data.os;
       _hargaCtrl.text = data.harga;
+      _logoCtrl.text = data.logo;
     });
     return data;
   }
@@ -54,10 +56,12 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         slivers: [
           SliverAppBar(
             backgroundColor: Colors.transparent,
+            centerTitle: true,
             title: const Text(
               "Ubah Catalogue",
               style: TextStyle(
                 fontFamily: 'Indie Flower',
+                fontWeight: FontWeight.bold,
               ),
             ),
             floating: true,
@@ -79,6 +83,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
                     _fieldFitur(),
                     _fieldOs(),
                     _fieldHarga(),
+                    _fieldLogo(),
                     _tombolSimpan()
                   ],
                 ),
@@ -300,6 +305,27 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
     );
   }
 
+  _fieldLogo() {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.grey[200],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          labelText: "Logo Brand",
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(vertical: 6, horizontal: 15),
+        ),
+        controller: _logoCtrl,
+        style: TextStyle(
+          fontFamily: 'Indie Flower',
+        ),
+      ),
+    );
+  }
+
   _tombolSimpan() {
     return Container(
       margin: EdgeInsets.only(top: 20),
@@ -316,6 +342,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
             fitur: _fiturCtrl.text,
             os: _osCtrl.text,
             harga: _hargaCtrl.text,
+            logo: _logoCtrl.text,
           );
 
           String id = widget.catalogue.id.toString();

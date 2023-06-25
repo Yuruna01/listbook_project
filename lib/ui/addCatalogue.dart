@@ -20,6 +20,7 @@ class _AddCatalogueState extends State<AddCatalogue> {
   final _fiturCtrl = TextEditingController();
   final _osCtrl = TextEditingController();
   final _hargaCtrl = TextEditingController();
+  final _logoCtrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,12 @@ class _AddCatalogueState extends State<AddCatalogue> {
         slivers: [
           SliverAppBar(
             backgroundColor: Colors.transparent,
+            centerTitle: true,
             title: const Text(
               "Tambah Catalogue",
               style: TextStyle(
                 fontFamily: 'Indie Flower',
+                fontWeight: FontWeight.bold,
               ),
             ),
             floating: true,
@@ -53,6 +56,7 @@ class _AddCatalogueState extends State<AddCatalogue> {
                     _fieldFitur(),
                     _fieldOs(),
                     _fieldHarga(),
+                    _fieldLogo(),
                     _tombolSimpan()
                   ],
                 ),
@@ -274,6 +278,27 @@ class _AddCatalogueState extends State<AddCatalogue> {
     );
   }
 
+  _fieldLogo() {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.grey[200],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          labelText: "Logo Brand",
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(vertical: 6, horizontal: 15),
+        ),
+        controller: _logoCtrl,
+        style: TextStyle(
+          fontFamily: 'Indie Flower',
+        ),
+      ),
+    );
+  }
+
   _tombolSimpan() {
     return Container(
       margin: EdgeInsets.only(top: 20),
@@ -290,6 +315,7 @@ class _AddCatalogueState extends State<AddCatalogue> {
             fitur: _fiturCtrl.text,
             os: _osCtrl.text,
             harga: _hargaCtrl.text,
+            logo: _logoCtrl.text,
           );
           await CatalogueService().simpan(catalogue).then((value) {
             Navigator.pushReplacement(

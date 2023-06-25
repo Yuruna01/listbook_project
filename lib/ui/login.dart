@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
             children: [
               ClipOval(
                 child: Image.asset(
-                  'assets/images/logo.jpg',
+                  'assets/images/logo.jpeg',
                   width: 150,
                   height: 150,
                   fit: BoxFit.cover,

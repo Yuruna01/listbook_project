@@ -18,11 +18,13 @@ class Dashboard extends StatelessWidget {
             elevation: 0,
             centerTitle: true,
             title: Column(children: [
-              Text('Listbook'.toUpperCase(),
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(color: Colors.black))
+              Text(
+                'ListBook',
+                style: TextStyle(
+                  fontFamily: 'Indie Flower',
+                  fontWeight: FontWeight.bold,
+                ),
+              )
             ]),
           ),
           SliverPadding(
@@ -35,11 +37,15 @@ class Dashboard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Artikel'.toUpperCase(),
-                    style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(color: Colors.black)),
+                  SizedBox(height: 20),
+                  Text(
+                    'Artikel Terkini',
+                    style: TextStyle(
+                      fontFamily: 'Indie Flower',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
+                  ),
                   SizedBox(
                     width: 180,
                     child: AspectRatio(
@@ -64,6 +70,7 @@ class Dashboard extends StatelessWidget {
                     ),
                   ),
                   KontenKetiga(),
+                  SizedBox(height: 20),
                 ],
               ),
             ),

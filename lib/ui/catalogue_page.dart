@@ -12,9 +12,23 @@ class CataloguePage extends StatefulWidget {
 }
 
 class _CataloguePageState extends State<CataloguePage> {
-  Stream<List<Catalogue>> getList() async* {
+  String searchText = '';
+
+  Future<List<Catalogue>> getList() async {
     List<Catalogue> data = await CatalogueService().listData();
-    yield data;
+    return data;
+  }
+
+  List<Catalogue> _filteredList(List<Catalogue> data) {
+    if (searchText.isEmpty) {
+      return data;
+    }
+
+    return data.where((catalogue) {
+      return catalogue.namaCatalogue
+          .toLowerCase()
+          .contains(searchText.toLowerCase());
+    }).toList();
   }
 
   @override
@@ -25,10 +39,12 @@ class _CataloguePageState extends State<CataloguePage> {
         slivers: <Widget>[
           SliverAppBar(
             backgroundColor: Colors.transparent,
+            centerTitle: true,
             title: const Text(
               "ListBook Catalogue",
               style: TextStyle(
                 fontFamily: 'Indie Flower',
+                fontWeight: FontWeight.bold,
               ),
             ),
             actions: [
@@ -39,79 +55,110 @@ class _CataloguePageState extends State<CataloguePage> {
             snap: true,
           ),
           SliverFillRemaining(
-            child: StreamBuilder(
-              stream: getList(),
-              builder: (context, AsyncSnapshot snapshot) {
-                if (snapshot.hasError) {
-                  return Text(
-                    snapshot.error.toString(),
-                    style: TextStyle(
-                      fontFamily: 'Indie Flower',
-                    ),
-                  );
-                }
-                if (snapshot.connectionState != ConnectionState.done) {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-                if (!snapshot.hasData &&
-                    snapshot.connectionState == ConnectionState.done) {
-                  return Text(
-                    'Data Kosong',
-                    style: TextStyle(
-                      fontFamily: 'Indie Flower',
-                    ),
-                  );
-                }
-
-                return ListView.builder(
-                  itemCount: snapshot.data.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      elevation:
-                          0, // Set elevation to 0 to remove the default shadow
-                      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        searchText = value;
+                      });
+                    },
+                    decoration: InputDecoration(
+                      hintText: 'Cari Nama Device',
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Colors.cyan.shade100,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              offset: Offset(0, 2),
-                              blurRadius: 5,
-                              spreadRadius: 0,
+                      contentPadding: EdgeInsets.symmetric(vertical: 1),
+                    ),
+                    style: TextStyle(
+                      fontFamily: 'Indie Flower',
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: FutureBuilder<List<Catalogue>>(
+                    future: getList(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Text(
+                          snapshot.error.toString(),
+                          style: TextStyle(
+                            fontFamily: 'Indie Flower',
+                          ),
+                        );
+                      }
+                      if (!snapshot.hasData ||
+                          snapshot.connectionState != ConnectionState.done) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+
+                      final filteredList = _filteredList(snapshot.data!);
+
+                      if (filteredList.isEmpty) {
+                        return Text(
+                          'Data Kosong',
+                          style: TextStyle(
+                            fontFamily: 'Indie Flower',
+                          ),
+                        );
+                      }
+
+                      return ListView.builder(
+                        itemCount: filteredList.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            elevation: 0,
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 6),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
                             ),
-                          ],
-                        ),
-                        child: Stack(
-                          children: [
-                            CatalogueItem(catalogue: snapshot.data[index]),
-                            Positioned(
-                              top: 8,
-                              right: 10,
-                              child: CircleAvatar(
-                                child: ClipOval(
-                                  child: Image.asset(
-                                    'assets/images/avatar.png',
-                                    width: 90,
-                                    height: 90,
-                                    fit: BoxFit.cover,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: Colors.cyan.shade100,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.5),
+                                    offset: Offset(0, 2),
+                                    blurRadius: 5,
+                                    spreadRadius: 0,
                                   ),
-                                ),
+                                ],
+                              ),
+                              child: Stack(
+                                children: [
+                                  CatalogueItem(catalogue: filteredList[index]),
+                                  Positioned(
+                                    top: 8,
+                                    right: 10,
+                                    child: CircleAvatar(
+                                      child: ClipOval(
+                                        child: Image.asset(
+                                          'assets/images/${filteredList[index].logo}.jpeg',
+                                          width: 90,
+                                          height: 90,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
         ],

@@ -57,6 +57,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                       "${snapshot.data.namaCatalogue}",
                       style: TextStyle(
                         fontFamily: 'Indie Flower',
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
@@ -96,6 +97,17 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
 
                 return ListView(
                   children: [
+                    Center(
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/${snapshot.data.logo}.jpeg',
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
                     Card(
                       child: ListTile(
                         title: Text(
@@ -354,7 +366,8 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                       fontFamily: 'Indie Flower',
                     ),
                   ),
-                  style: ElevatedButton.styleFrom(primary: Colors.red),
+                  style:
+                      ElevatedButton.styleFrom(primary: Colors.cyan.shade300),
                 );
               },
             ),
@@ -368,7 +381,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                   fontFamily: 'Indie Flower',
                 ),
               ),
-              style: ElevatedButton.styleFrom(primary: Colors.green),
+              style: ElevatedButton.styleFrom(primary: Colors.red),
             ),
           ],
         );
