@@ -16,7 +16,7 @@ class About extends StatelessWidget {
             title: const Text(
               "About Us",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -31,7 +31,7 @@ class About extends StatelessWidget {
                   child: Text(
                     'Listbook Versi 1.0',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
                     ),
@@ -42,7 +42,7 @@ class About extends StatelessWidget {
                   child: Text(
                     'Listbook ini dibuat untuk memenuhi Projek tugas akhir semester 4 matakuliah Mobile Programing yang dikembangkan oleh kelompok 2 yang mana beranggotakan 5 orang yaitu :',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                       fontSize: 16,
                     ),
                   ),
@@ -63,14 +63,14 @@ class About extends StatelessWidget {
                       'Alvin Austin',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       'NIM 12210247 - Kelas 12.4A.15',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
@@ -88,14 +88,14 @@ class About extends StatelessWidget {
                       'Hany Mustika',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       'NIM 12210596 - Kelas 12.4A.15',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
@@ -113,14 +113,14 @@ class About extends StatelessWidget {
                       'Marsha Aditya Puandi',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       'NIM 12210613 - Kelas 12.4A.15',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
@@ -138,14 +138,14 @@ class About extends StatelessWidget {
                       'Nabil Muthi Maulani',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       'NIM 12210365 - Kelas 12.4A.15',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
@@ -163,14 +163,14 @@ class About extends StatelessWidget {
                       'Yusup Supriatna',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     subtitle: Text(
                       'NIM 12210740 - Kelas 12.4A.15',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
