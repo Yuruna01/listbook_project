@@ -58,7 +58,7 @@ class _CataloguePageState extends State<CataloguePage> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(16.0),
+                  padding: EdgeInsets.symmetric(vertical: 0, horizontal: 16),
                   child: TextField(
                     onChanged: (value) {
                       setState(() {
@@ -110,6 +110,7 @@ class _CataloguePageState extends State<CataloguePage> {
                       }
 
                       return ListView.builder(
+                        padding: EdgeInsets.only(top: 8),
                         itemCount: filteredList.length,
                         itemBuilder: (context, index) {
                           return Card(
@@ -125,7 +126,7 @@ class _CataloguePageState extends State<CataloguePage> {
                                 color: Colors.cyan.shade100,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
+                                    color: Colors.grey.withOpacity(0.2),
                                     offset: Offset(0, 2),
                                     blurRadius: 5,
                                     spreadRadius: 0,
@@ -136,7 +137,7 @@ class _CataloguePageState extends State<CataloguePage> {
                                 children: [
                                   CatalogueItem(catalogue: filteredList[index]),
                                   Positioned(
-                                    top: 8,
+                                    top: 12,
                                     right: 10,
                                     child: CircleAvatar(
                                       child: ClipOval(

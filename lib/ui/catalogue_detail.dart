@@ -57,9 +57,10 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                     Text(
                       "${snapshot.data.namaCatalogue}",
                       style: TextStyle(
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13.3),
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13.6,
+                      ),
                     ),
                   ],
                 );
@@ -97,6 +98,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                 }
 
                 return ListView(
+                  padding: EdgeInsets.only(top: 0),
                   children: [
                     Center(
                       child: ClipOval(
@@ -108,7 +110,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 15),
                     Card(
                       child: ListTile(
                         title: Text(
@@ -268,6 +270,9 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                           ),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 );

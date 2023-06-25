@@ -25,6 +25,7 @@ class About extends StatelessWidget {
           ),
           SliverFillRemaining(
             child: ListView(
+              padding: EdgeInsets.only(top: 0),
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 11),
@@ -48,7 +49,7 @@ class About extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Card(
                   margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),

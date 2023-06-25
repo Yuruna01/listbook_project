@@ -22,7 +22,7 @@ class Sidebar extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   color: Colors.black,
-                  fontSize: 22,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -32,7 +32,7 @@ class Sidebar extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Montserrat',
                 color: Colors.black,
-                fontSize: 14,
+                fontSize: 12,
               ),
             ),
             currentAccountPicture: CircleAvatar(
