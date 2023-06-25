@@ -84,7 +84,8 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
                     _fieldOs(),
                     _fieldHarga(),
                     _fieldLogo(),
-                    _tombolSimpan()
+                    _tombolSimpan(),
+                    SizedBox(height: 35)
                   ],
                 ),
               ),
@@ -357,10 +358,10 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
           });
         },
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
           textStyle: TextStyle(
             fontFamily: 'Montserrat',
-            fontSize: 18,
+            fontSize: 16,
           ),
         ),
         child: const Text(

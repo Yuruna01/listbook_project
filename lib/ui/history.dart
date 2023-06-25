@@ -24,33 +24,34 @@ class History extends StatelessWidget {
             snap: true,
           ),
           SliverPadding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(10),
             sliver: SliverToBoxAdapter(
                 child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Image.asset('assets/images/sale_4.png'),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.all(10),
                     child: Text(
                       'Aplikasi Listbook ini dikembangkan dengan tujuan penggunanya untuk mencari daftar laptop yang sangat lengkap dalam genggaman tangan dan mudah....',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 18,
+                        fontSize: 16,
                       ),
                     ),
                   ),
+                  SizedBox(height: 15),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    padding: EdgeInsets.symmetric(horizontal: 10),
                     child: Text(
                       'Partner Kerja Sama',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -80,12 +81,12 @@ class History extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 16),
+                    padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10),
                     child: Text(
                       'Bergabunglah dengan kami dalam perjalanan untuk mencapai kesuksesan bersama, Kami bangga bermitra dengan perusahaan-perusahaan terkemuka dalam industri ini, Dengan kolaborasi yang kuat, kita dapat mencapai pertumbuhan dan kesuksesan yang berkelanjutan.',
                       style: TextStyle(
                         fontFamily: 'Montserrat',
-                        fontSize: 18,
+                        fontSize: 16,
                       ),
                     ),
                   ),
