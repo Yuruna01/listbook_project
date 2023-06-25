@@ -1,6 +1,6 @@
 {
-    "name": "pricebook_project",
-    "short_name": "pricebook_project",
+    "name": "Listbook",
+    "short_name": "Listbook",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
