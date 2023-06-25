@@ -31,6 +31,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
         slivers: [
           SliverAppBar(
             backgroundColor: Colors.transparent,
+            centerTitle: true,
             title: StreamBuilder(
               stream: getData(),
               builder: (context, AsyncSnapshot snapshot) {
@@ -47,7 +48,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                   return Text(
                     'Data Tidak Ditemukan',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                     ),
                   );
                 }
@@ -56,9 +57,9 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                     Text(
                       "${snapshot.data.namaCatalogue}",
                       style: TextStyle(
-                        fontFamily: 'Indie Flower',
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13.3),
                     ),
                   ],
                 );
@@ -90,7 +91,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                   return Text(
                     'Data Tidak Ditemukan',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                     ),
                   );
                 }
@@ -113,13 +114,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "Device Name",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.namaCatalogue,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -129,13 +130,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "LCD",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.lcd,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -145,13 +146,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "CPU",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.cpu,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -161,13 +162,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "RAM",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.ram,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -177,13 +178,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "HDD/SSD",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.hddSsd,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -193,13 +194,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "Wifi",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.wifi,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -209,13 +210,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "USB Port",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.usb,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -225,13 +226,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "Fitur Terbaik",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.fitur,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -241,13 +242,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "Sistem Operasi",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.os,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -257,13 +258,13 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                         title: Text(
                           "Harga",
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                         subtitle: Text(
                           snapshot.data.harga,
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         ),
                       ),
@@ -295,7 +296,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
           return Text(
             'Data Tidak Ditemukan',
             style: TextStyle(
-              fontFamily: 'Indie Flower',
+              fontFamily: 'Montserrat',
             ),
           );
         }
@@ -324,7 +325,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
           content: const Text(
             "Yakin ingin menghapus data ini?",
             style: TextStyle(
-              fontFamily: 'Indie Flower',
+              fontFamily: 'Montserrat',
             ),
           ),
           actions: [
@@ -344,7 +345,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                   return Text(
                     'Data Tidak Ditemukan',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                     ),
                   );
                 }
@@ -363,7 +364,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
                   child: const Text(
                     "YA",
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                     ),
                   ),
                   style:
@@ -378,7 +379,7 @@ class _CatalogueDetailState extends State<CatalogueDetail> {
               child: const Text(
                 "Tidak",
                 style: TextStyle(
-                  fontFamily: 'Indie Flower',
+                  fontFamily: 'Montserrat',
                 ),
               ),
               style: ElevatedButton.styleFrom(primary: Colors.red),

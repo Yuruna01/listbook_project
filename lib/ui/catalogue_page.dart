@@ -43,7 +43,7 @@ class _CataloguePageState extends State<CataloguePage> {
             title: const Text(
               "ListBook Catalogue",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -74,7 +74,7 @@ class _CataloguePageState extends State<CataloguePage> {
                       contentPadding: EdgeInsets.symmetric(vertical: 1),
                     ),
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -87,7 +87,7 @@ class _CataloguePageState extends State<CataloguePage> {
                         return Text(
                           snapshot.error.toString(),
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         );
                       }
@@ -104,7 +104,7 @@ class _CataloguePageState extends State<CataloguePage> {
                         return Text(
                           'Data Kosong',
                           style: TextStyle(
-                            fontFamily: 'Indie Flower',
+                            fontFamily: 'Montserrat',
                           ),
                         );
                       }

@@ -15,7 +15,7 @@ class CatalogueItem extends StatelessWidget {
           title: Text(
             "${catalogue.namaCatalogue}",
             style: TextStyle(
-              fontFamily: 'Indie Flower',
+              fontFamily: 'Montserrat',
             ),
           ),
         ),

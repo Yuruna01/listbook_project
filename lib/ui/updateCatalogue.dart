@@ -60,7 +60,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
             title: const Text(
               "Ubah Catalogue",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -110,7 +110,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _namaCatalogueCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -131,7 +131,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _lcdCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -152,7 +152,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _cpuCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -173,7 +173,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _ramCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -194,7 +194,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _hddSsdCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -215,7 +215,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _wifiCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -236,7 +236,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _usbCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -257,7 +257,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _fiturCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -278,7 +278,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _osCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -299,7 +299,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _hargaCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -320,7 +320,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         ),
         controller: _logoCtrl,
         style: TextStyle(
-          fontFamily: 'Indie Flower',
+          fontFamily: 'Montserrat',
         ),
       ),
     );
@@ -359,7 +359,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
         style: ElevatedButton.styleFrom(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           textStyle: TextStyle(
-            fontFamily: 'Indie Flower',
+            fontFamily: 'Montserrat',
             fontSize: 18,
           ),
         ),
@@ -367,7 +367,7 @@ class _UpdateCatalogueState extends State<UpdateCatalogue> {
           "Simpan",
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'Indie Flower',
+            fontFamily: 'Montserrat',
           ),
         ),
       ),

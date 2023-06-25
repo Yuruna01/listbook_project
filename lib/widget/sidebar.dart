@@ -20,7 +20,7 @@ class Sidebar extends StatelessWidget {
               child: Text(
                 "adminListBook",
                 style: TextStyle(
-                  fontFamily: 'Indie Flower',
+                  fontFamily: 'Montserrat',
                   color: Colors.black,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -30,7 +30,7 @@ class Sidebar extends StatelessWidget {
             accountEmail: Text(
               "admin@listBook.com",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 14,
               ),
@@ -60,7 +60,7 @@ class Sidebar extends StatelessWidget {
             title: Text(
               "Dashboard",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class Sidebar extends StatelessWidget {
             title: Text(
               "ListBook Catalogue",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -100,7 +100,7 @@ class Sidebar extends StatelessWidget {
             title: Text(
               "History",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -119,7 +119,7 @@ class Sidebar extends StatelessWidget {
             title: Text(
               "About Us",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class Sidebar extends StatelessWidget {
             title: Text(
               "Sign Out",
               style: TextStyle(
-                fontFamily: 'Indie Flower',
+                fontFamily: 'Montserrat',
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,

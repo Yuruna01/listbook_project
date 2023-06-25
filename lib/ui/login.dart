@@ -35,7 +35,7 @@ class _LoginState extends State<Login> {
               Text(
                 "Login listBook",
                 style: TextStyle(
-                  fontFamily: 'Indie Flower',
+                  fontFamily: 'Montserrat',
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: Colors.cyan,
@@ -44,7 +44,7 @@ class _LoginState extends State<Login> {
               Text(
                 "admin@listBook.com",
                 style: TextStyle(
-                  fontFamily: 'Indie Flower',
+                  fontFamily: 'Montserrat',
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
                   color: Colors.cyan,
@@ -86,7 +86,7 @@ class _LoginState extends State<Login> {
       ),
       controller: _usernameCtrl,
       style: TextStyle(
-        fontFamily: 'Indie Flower',
+        fontFamily: 'Montserrat',
       ),
     );
   }
@@ -104,7 +104,7 @@ class _LoginState extends State<Login> {
       obscureText: true,
       controller: _passwordCtrl,
       style: TextStyle(
-        fontFamily: 'Indie Flower',
+        fontFamily: 'Montserrat',
       ),
     );
   }
@@ -137,7 +137,7 @@ class _LoginState extends State<Login> {
                 content: const Text(
                   "Username / Password Tidak Valid",
                   style: TextStyle(
-                    fontFamily: 'Indie Flower',
+                    fontFamily: 'Montserrat',
                   ),
                 ),
                 actions: [
@@ -148,7 +148,7 @@ class _LoginState extends State<Login> {
                     child: const Text(
                       "OK",
                       style: TextStyle(
-                        fontFamily: 'Indie Flower',
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     style: OutlinedButton.styleFrom(
@@ -168,7 +168,7 @@ class _LoginState extends State<Login> {
         child: Text(
           'Login',
           style: TextStyle(
-            fontFamily: 'Indie Flower',
+            fontFamily: 'Montserrat',
           ),
         ),
       ),

@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
               Text(
                 'ListBook',
                 style: TextStyle(
-                  fontFamily: 'Indie Flower',
+                  fontFamily: 'Montserrat',
                   fontWeight: FontWeight.bold,
                 ),
               )
@@ -41,7 +41,7 @@ class Dashboard extends StatelessWidget {
                   Text(
                     'Artikel Terkini',
                     style: TextStyle(
-                      fontFamily: 'Indie Flower',
+                      fontFamily: 'Montserrat',
                       fontWeight: FontWeight.bold,
                       fontSize: 22,
                     ),
